@@ -22,6 +22,13 @@ class RbacOptions extends AbstractOptions
     protected $firewallRoute = false;
 
     /**
+     * Flag: enable or disable the action resource firewall.
+     *
+     * @var bool
+     */
+    protected $firewallActionResource = false;
+
+    /**
      * Flag: enable or disable the controller firewall.
      *
      * @var bool
@@ -113,6 +120,24 @@ class RbacOptions extends AbstractOptions
     /**
      * @return boolean
      */
+    public function getFirewallActionResource()
+    {
+        return $this->firewallActionResource;
+    }
+    
+    /**
+     * @param boolean $firewallActionResource
+     * @return RbacOptions
+     */
+    public function setFirewallActionResource($firewallActionResource)
+    {
+        $this->firewallActionResource = $firewallActionResource;
+        return $this;
+    }    
+
+    /**
+     * @return boolean
+     */
     public function getFirewallRoute()
     {
         return $this->firewallRoute;
@@ -134,6 +159,24 @@ class RbacOptions extends AbstractOptions
     public function getFirewalls()
     {
         return $this->firewalls;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function getEnableLazyProviders()
+    {
+        return $this->enableLazyProviders;
+    }
+    
+    /**
+     * @param boolean $enableLazyProviders
+     * @return RbacOptions
+     */
+    public function setEnableLazyProviders($enableLazyProviders)
+    {
+        $this->enableLazyProviders = $enableLazyProviders;
+        return $this;
     }
 
     /**
